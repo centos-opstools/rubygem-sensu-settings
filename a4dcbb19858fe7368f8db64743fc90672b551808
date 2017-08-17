@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_1090b494",
+        "filename": "rubygem-sensu-settings.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 314
+      },
+      "writtenOn": "2017-08-17T08:02:26Z",
+      "side": 1,
+      "message": "parse-cron is not a requirement for 9.6.0 (as you can check in [1]). The dependency was added in 9.9.0.\n\n[1] https://rubygems.org/gems/sensu-settings/versions/9.6.0",
+      "range": {
+        "startLine": 23,
+        "startChar": 16,
+        "endLine": 23,
+        "endChar": 35
+      },
+      "revId": "a4dcbb19858fe7368f8db64743fc90672b551808",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

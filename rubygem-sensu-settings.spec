@@ -2,7 +2,7 @@
 %global gem_name sensu-settings
 
 Name:           rubygem-%{gem_name}
-Version:        9.6.0
+Version:        10.9.0
 Release:        1%{?dist}
 Summary:        The Sensu settings library, loader and validator
 Group:          Development/Languages
@@ -14,17 +14,19 @@ Source1:        https://github.com/sensu/%{gem_name}/archive/v%{version}.tar.gz#
 BuildRequires:  ruby(release)
 BuildRequires:  rubygems-devel
 BuildRequires:  ruby
-%if 0%{?fedora} > 21
+%if 0%{?fedora}
 BuildRequires:  rubygem(rspec2)
 %else
 BuildRequires:  rubygem(rspec)
 %endif
 BuildRequires:  rubygem(sensu-json)
+BuildRequires:  rubygem(parse-cron)
 
 Requires:       rubygem(sensu-json)
+Requires:       rubygem(parse-cron)
 
 BuildArch: noarch
-%if 0%{?rhel} > 0
+%if 0%{?rhel}
 Provides:       rubygem(%{gem_name}) = %{version}
 %endif
 
@@ -105,6 +107,9 @@ popd
 %{gem_instdir}/%{gem_name}.gemspec
 
 %changelog
+* Fri Dec 23 2016 Martin Mágr <mmagr@redhat.com> -  10.9.0-1
+- Rebased to latest release for Sensu 1.1.x rebase
+
 * Fri Dec 23 2016 Martin Mágr <mmagr@redhat.com> -  9.6.0-1
 - Updated to latest upstream version
 
